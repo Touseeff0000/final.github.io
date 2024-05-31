@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Management System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>LIBRARY MANAGEMENT SYSTEM</h1>
+            <hr>
+        </header>
+        <form id="libraryForm">
+            <div class="form-section">
+                <h2>Library Membership Information</h2>
+                <div class="form-group">
+                    <label for="memberType">Member Type:</label>
+                    <select id="memberType" style="outline: 1px solid #a5fdc7;background-color: #28343E; color: #fff;">
+                        <option value="Student">Student</option>
+                        <option value="Teacher">Teacher</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="prnNo">PRN No:</label>
+                    <input type="text" id="prnNo" style="outline: 1px solid #a5fdc7;background-color: #28343E; color: #fff;">
+                </div>
+                <div class="form-group">
+                    <label for="idNo">ID No:</label>
+                    <input type="text" id="idNo" style="outline: 1px solid #a5fdc7;background-color: #28343E; color: #fff;">
+                </div>
+                <div class="form-group">
+                    <label for="firstName">First Name:</label>
+                    <input type="text" id="firstName" style="outline: 1px solid #a5fdc7;background-color: #28343E; color: #fff;">
+                </div>
+                <div class="form-group">
+                    <label for="surname">Surname:</label>
+                    <input type="text" id="surname" style="outline: 1px solid #a5fdc7;background-color: #28343E; color: #fff;">
+                </div>
+                <div class="form-group">
+                    <label for="address1">Address1:</label>
+                    <input type="text" id="address1" style="outline: 1px solid #a5fdc7;background-color: #28343E; color: #fff;">
+                </div>
+                <div class="form-group">
+                    <label for="address2">Address2:</label>
+                    <input type="text" id="address2" style="outline: 1px solid #a5fdc7;background-color: #28343E; color: #fff;">
+                </div>
+                <div class="form-group">
+                    <label for="postCode">Post Code:</label>
+                    <input type="text" id="postCode" style="outline: 1px solid #a5fdc7;background-color: #28343E; color: #fff;">
+                </div>
+                <div class="form-group">
+                    <label for="mobileNumber">Mobile Number:</label>
+                    <input type="text" id="mobileNumber" style="outline: 1px solid #a5fdc7;background-color: #28343E; color: #fff;">
+                </div>
+                <div class="form-group">
+                    <label for="bookId">Book Id:</label>
+                    <input type="text" id="bookId" style="outline: 1px solid #a5fdc7;background-color: #28343E; color: #fff;">
+                </div>
+                <div class="form-group">
+                    <label for="bookTitle">Book Title:</label>
+                    <input type="text" id="bookTitle" style="outline: 1px solid #a5fdc7;background-color: #28343E; color: #fff;">
+                </div>
+                <div class="form-group">
+                    <label for="authorName">Author Name:</label>
+                    <input type="text" id="authorName" style="outline: 1px solid #a5fdc7;background-color: #28343E; color: #fff;">
+                </div>
+                <div class="form-group">
+                    <label for="dateBorrowed">Date Borrowed:</label>
+                    <input type="date" id="dateBorrowed" style="outline: 1px solid #a5fdc7;background-color: #28343E; color: #fff;">
+                </div>
+                <div class="form-group">
+                    <label for="dateDue">Date Due:</label>
+                    <input type="date" id="dateDue" style="outline: 1px solid #a5fdc7;background-color: #28343E; color: #fff;">
+                </div>
+                <div class="form-group">
+                    <label for="daysOnBook">Days On Book:</label>
+                    <input type="number" id="daysOnBook" style="outline: 1px solid #a5fdc7;background-color: #28343E; color: #fff;">
+                </div>
+                <div class="form-group">
+                    <label for="lateReturnFine">Late Return Fine:</label>
+                    <input type="text" id="lateReturnFine" style="outline: 1px solid #a5fdc7;background-color: #28343E; color: #fff;">
+                </div>
+                <div class="form-group">
+                    <label for="dateOverDue">Date Over Due:</label>
+                    <input type="text" id="dateOverDue" style="outline: 1px solid #a5fdc7;background-color: #28343E; color: #fff;">
+                </div>
+                <div class="form-group">
+                    <label for="actualPrice">Actual Price:</label>
+                    <input type="text" id="actualPrice" style="outline: 1px solid #a5fdc7;background-color: #28343E; color: #fff;">
+                </div>
+            </div>
+            <hr class="hr1">
+            <div class="form-section">
+                <h2>Book Details</h2>
+                <!-- <textarea id="bookDetails" rows="15" readonly style="outline: 1px solid #a5fdc7;background-color: #28343E; color: #fff;"></textarea> -->
+            </div>
+        </form>
+        <div class="buttons">
+            <button id="addData">Add Data</button>
+            <button id="showData">Show Data</button>
+            <button id="updateData">Update</button>
+            <button id="deleteData">Delete</button>
+            <button onclick="resetForm()">Reset</button>
+            <button onclick="exitApp()">Exit</button>
+        </div>
+        <table id="dataTable">
+            <thead>
+                <tr>
+                    <th>Member Type</th>
+                    <th>PRN No</th>
+                    <th>ID No</th>
+                    <th>First Name</th>
+                    <th>Surname</th>
+                    <th>Address1</th>
+                    <th>Address2</th>
+                    <th>Post Code</th>
+                    <th>Mobile Number</th>
+                    <th>Book Id</th>
+                    <th>Book Title</th>
+                    <th>Author Name</th>
+                    <th>Date Borrowed</th>
+                    <th>Date Due</th>
+                    <th>Days On Book</th>
+                    <th>Late Return Fine</th>
+                    <th>Date Over Due</th>
+                    <th>Actual Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Data rows will be added here dynamically -->
+            </tbody>
+        </table>
+    </div>
+    <script src="scripts.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.6.1/sql-wasm.js"></script>
+    <script>
+        let db;
+
+        async function initDb() {
+            const SQL = await initSqlJs({ locateFile: file => `https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.6.1/${file}` });
+            db = new SQL.Database();
+            createTable();
+        }
+
+        function createTable() {
+            db.run(`CREATE TABLE IF NOT EXISTS members (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                member_type TEXT,
+                prn_no TEXT,
+                id_no TEXT,
+                first_name TEXT,
+                surname TEXT,
+                address1 TEXT,
+                address2 TEXT,
+                post_code TEXT,
+                mobile_number TEXT,
+                book_id TEXT,
+                book_title TEXT,
+                author_name TEXT,
+                date_borrowed TEXT,
+                date_due TEXT,
+                days_on_book INTEGER,
+                late_return_fine TEXT,
+                date_overdue TEXT,
+                actual_price TEXT
+            )`);
+        }
+
+        function addData() {
+            const memberType = document.getElementById('memberType').value;
+            const prnNo = document.getElementById('prnNo').value;
+            const idNo = document.getElementById('idNo').value;
+            const firstName = document.getElementById('firstName').value;
+            const surname = document.getElementById('surname').value;
+            const address1 = document.getElementById('address1').value;
+            const address2 = document.getElementById('address2').value;
+            const postCode = document.getElementById('postCode').value;
+            const mobileNumber = document.getElementById('mobileNumber').value;
+            const bookId = document.getElementById('bookId').value;
+            const bookTitle = document.getElementById('bookTitle').value;
+            const authorName = document.getElementById('authorName').value;
+            const dateBorrowed = document.getElementById('dateBorrowed').value;
+            const dateDue = document.getElementById('dateDue').value;
+            const daysOnBook = document.getElementById('daysOnBook').value;
+            const lateReturnFine = document.getElementById('lateReturnFine').value;
+            const dateOverDue = document.getElementById('dateOverDue').value;
+            const actualPrice = document.getElementById('actualPrice').value;
+
+            const stmt = db.prepare(`INSERT INTO members (member_type, prn_no, id_no, first_name, surname, address1, address2, post_code, mobile_number, book_id, book_title, author_name, date_borrowed, date_due, days_on_book, late_return_fine, date_overdue, actual_price) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`);
+            stmt.run(memberType, prnNo, idNo, firstName, surname, address1, address2, postCode, mobileNumber, bookId, bookTitle, authorName, dateBorrowed, dateDue, daysOnBook, lateReturnFine, dateOverDue, actualPrice);
+            stmt.free();
+
+            alert('Data added successfully!');
+            showData();
+        }
+
+        function showData() {
+            const tbody = document.querySelector('#dataTable tbody');
+            tbody.innerHTML = ''; // Clear existing data
+
+            const stmt = db.prepare(`SELECT * FROM members`);
+            while (stmt.step()) {
+                const row = stmt.getAsObject();
+                const tr = document.createElement('tr');
+                for (const key in row) {
+                    const td = document.createElement('td');
+                    td.textContent = row[key];
+                    tr.appendChild(td);
+                }
+                tbody.appendChild(tr);
+            }
+            stmt.free();
+        }
+
+        function resetForm() {
+            document.getElementById('libraryForm').reset();
+        }
+
+        function exitApp() {
+            if (confirm('Are you sure you want to exit?')) {
+                window.close();
+            }
+        }
+
+        document.getElementById('addData').addEventListener('click', addData);
+        document.getElementById('showData').addEventListener('click', showData);
+
+        initDb();
+    </script>
+</body>
+</html>
